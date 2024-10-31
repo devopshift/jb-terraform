@@ -112,7 +112,7 @@ resource "null_resource" "validate_ip" {
       fi
     EOT
   }
-  depends_on = [ time_sleep.wait_for_ip ]
+  depends_on = [azurerm_public_ip.pip ,time_sleep.wait_for_ip]
 }
 
 output "vm_public_ip" {
